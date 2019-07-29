@@ -25,4 +25,13 @@ describe "POST '/greet' - User Greeting" do
 
     expect(page).to have_text("Hi Avi, nice to meet you!")
   end
+
+  it 'greets the user in a happy way!' do
+    visit '/'
+
+    fill_in(:user_name_happy, :with => "Jeremiah")
+    click_button "Happy Greeting"
+
+    expect(page).to have_text("Hi Jeremiah!!! I'm so happy to meet you!")
+  end
 end
